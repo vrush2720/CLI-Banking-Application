@@ -3,7 +3,7 @@ Database file(MySQL 8.0): bank_app_db.sql
 Application file(Python 3.8): bank_app.py
 
 For configuring Mysql database edit mysql server root password in application file (replace "mysqlpass" with your mysql server password)
-line of code: 5, 21, 36,57
+line of code: 5, 20, 35,56
 
 STEPS:
 1] Log into Mysql Command Line Interface and execute "source [path of database file]" eg. "source E:\bank_app_db.sql"
