@@ -2,7 +2,7 @@ import mysql.connector
 Operation = input("").split()
 
 def create():
-	connection=mysql.connector.connect(host="localhost",user="root",password="sumeet24",database="banking_db")
+	connection=mysql.connector.connect(host="localhost",user="root",password="mysqlpass",database="banking_db")
 	cursor=connection.cursor()
 	sql1="select Code from banking_app_tb"
 	cursor.execute(sql1)
@@ -17,7 +17,7 @@ def create():
 	connection.close()
 	
 def deposit():
-	connection=mysql.connector.connect(host="localhost",user="root",password="sumeet24",database="banking_app_db")
+	connection=mysql.connector.connect(host="localhost",user="root",password="mysqlpass",database="banking_app_db")
 	cursor=connection.cursor()
 	sql1="select Code from banking_app_tb"
 	cursor.execute(sql1)
@@ -32,7 +32,7 @@ def deposit():
 	connection.close()
 
 def withdraw():
-	connection=mysql.connector.connect(host="localhost",user="root",password="sumeet24",database="banking_app_db")
+	connection=mysql.connector.connect(host="localhost",user="root",password="mysqlpass",database="banking_app_db")
 	cursor=connection.cursor()
 	sql1="select Code from banking_app_tb"
 	cursor.execute(sql1)
@@ -53,7 +53,7 @@ def withdraw():
 	connection.close()
 
 def balance():
-	connection=mysql.connector.connect(host="localhost",user="root",password="sumeet24",database="banking_app_db")
+	connection=mysql.connector.connect(host="localhost",user="root",password="mysqlpass",database="banking_app_db")
 	cursor=connection.cursor()
 	sql1="select Code from banking_app_tb"
 	cursor.execute(sql1)
