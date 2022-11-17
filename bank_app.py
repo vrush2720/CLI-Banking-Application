@@ -7,14 +7,13 @@ def create():
 	sql1="select Code from banking_app_tb"
 	cursor.execute(sql1)
 	check=cursor.fetchone()
-	for c in check:
-		if c == Operation[1]:
-			print("Account already exists")
-		else:
-			sql="insert into banking_app_tb values('%s','%s','%d')"
-			cursor.execute(sql %(Operation[1],Operation[2],0))
-			print("Account created successfully")
-	connection.commit()
+	if Operation[1] in check:
+		print("Account already exists")
+	else:
+		sql="insert into banking_app_tb values('%s','%s','%d')"
+		cursor.execute(sql %(Operation[1],Operation[2],0))
+		print("Account created successfully")
+		connection.commit()
 	connection.close()
 
 def deposit():
