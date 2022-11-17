@@ -2,20 +2,20 @@ import mysql.connector
 Operation = input("").split()
 
 def create():
-	connection=mysql.connector.connect(host="localhost",user="root",password="sumeet24",database="banking_app_db")
+	connection=mysql.connector.connect(host="localhost",user="root",password="sumeet24",database="banking_db")
 	cursor=connection.cursor()
 	sql1="select Code from banking_app_tb"
 	cursor.execute(sql1)
-	check=cursor.fetchall()
-	if Operation[1] in check:
-		print("Account already exists")
-	else:
-		sql="insert into banking_app_tb values('%s','%s','%d')"
-		cursor.execute(sql %(Operation[1],Operation[2],0))
+	check=cursor.fetchone()
+	if Operation[1] not in check:
+		sql2="insert into banking_app_tb values('%s','%s','%d')"
+		cursor.execute(sql2 %(Operation[1],Operation[2],0))
 		print("Account created successfully")
 		connection.commit()
+	else:
+		print("Account already exists")
 	connection.close()
-
+	
 def deposit():
 	connection=mysql.connector.connect(host="localhost",user="root",password="sumeet24",database="banking_app_db")
 	cursor=connection.cursor()
