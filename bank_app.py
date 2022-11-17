@@ -6,7 +6,7 @@ def create():
 	cursor=connection.cursor()
 	sql1="select Code from banking_app_tb"
 	cursor.execute(sql1)
-	check=cursor.fetchone()
+	check=cursor.fetchall()
 	if Operation[1] in check:
 		print("Account already exists")
 	else:
